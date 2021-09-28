@@ -7,10 +7,11 @@ public class 旋转链表 {
     给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
      */
     /*
-    方法：第一次遍历将单链表转换为循环链表，第二次遍历寻找头尾节点
+    方法：第一次遍历将单链表转换为循环链表，第二次遍历寻找头尾节点。
+        时间复杂度 O(N)
+        空间复杂度 O(1)
      */
     public ListNode rotateRight(ListNode head, int k) {
-
         if(head==null){            //特判
             return head;
         }
@@ -23,7 +24,6 @@ public class 旋转链表 {
             head = head.next;
         }
         cur.next = pre;             //将单链表转换为循环链表
-
         k = k%length;
         int i = length-(k+1);
         while(i!=0){                //第二次遍历寻找旋转后的头尾节点
