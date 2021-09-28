@@ -33,13 +33,15 @@ public class 扁平化多级双向链表 {
             比如在例子中：2走完后链表应变为    1  -  2  - 5  -  6  -  7  -  3  -  4  -  5   - null
                                                            |
                                                            8  -  9  - null
+        时间复杂度 O(N)
+        空间复杂度 O(1)
      */
 
     public Node flatten(Node head) {
         Node p = head;
         while (p != null) {
-            if (p.child != null) {         //如果有孩子节点，准备做插入操作
 
+            if (p.child != null) {         //如果有孩子节点，准备做插入操作
                 Node next = p.next;        //先保存当前节点的next域，防止丢失
                 Node child = p.child;
 
@@ -60,33 +62,37 @@ public class 扁平化多级双向链表 {
         return head;
     }
 
+
     /*
     方法二：递归的深度优先搜索，
-        如果把列表旋转90度，现在的多级双向链表可以看做是一个二叉树，每一个节点的next域可看做右孩子，child域可看做左孩子，与二叉树不同的是，现在的左右孩子可以指向双亲节点
-            那么先序遍历的结果刚好是单级双链表
+        如果把列表旋转90度，现在的多级双向链表可以看做是一个二叉树，每一个节点的next域可看做右孩子，child域可看做左孩子，与二叉树不同的是，
+            现在的左右孩子可以指向双亲节点.那么先序遍历的结果刚好是单级双链表
+        时间复杂度 O(n)
+        空间复杂度 O(n)
 
      */
     public Node flatten1(Node head) {
-        if (head == null) return head;
-
-        Node pseudoHead = new Node(0, null, head, null);            //用pseudoHead来存储遍历后的单链表
-        flattenDFS(pseudoHead, head);                     //先序遍历
-        pseudoHead.next.prev = null;
-        return pseudoHead.next;
+        if(head == null){
+            return  head;
+        }
+        Node dummyNode = new Node();
+        dummyNode.next = head;
+        dfs(dummyNode,head);
+        dummyNode.next.prev = null;     //断开与哑节点的联系
+        return dummyNode.next;
     }
+    Node dfs(Node pre, Node cur){        //pre相当于已经扁平化处理的最后一个节点，cur相当于代扁平化处理的节点
+        //先处理根节点
+        if(cur == null) return pre;
+        pre.next = cur;
+        cur.prev = pre;
 
-    public Node flattenDFS(Node prev, Node curr) {
-
-        if (curr == null) return prev;
-        curr.prev = prev;
-        prev.next = curr;
-
-        Node tempNext = curr.next;
-
-        Node tail = flattenDFS(curr, curr.child);
-        curr.child = null;
-
-        return flattenDFS(tail, tempNext);
+        Node tempNext = cur.next;   //先把下一个节点做保存
+        //处理左子树，即孩子节点
+        Node left = dfs(cur,cur.child);
+        cur.child = null;
+        //处理右子树,即Next节点
+        return dfs(left,tempNext);
     }
 
 
