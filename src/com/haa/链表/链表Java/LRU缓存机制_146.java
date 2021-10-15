@@ -115,7 +115,6 @@ public class LRU缓存机制_146 {
             super(capacity, 0.75F, true);
             this.capacity = capacity;
         }
-
         public int get(int key) {
             return super.getOrDefault(key, -1);
         }
