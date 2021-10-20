@@ -25,7 +25,6 @@ public class 平均流量 {
                 arr[i] -= (sum-c*(i+1));
                 sum-= (sum-c*(i+1));
             }
-
         }
     }
 }
