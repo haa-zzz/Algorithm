@@ -3,7 +3,6 @@ package com.haa.数组和字符串.数组和字符串Java;
 public class 最长公共前缀 {
     /*
     编写一个函数来查找字符串数组中的最长公共前缀。
-
     如果不存在公共前缀，返回空字符串 ""。
      */
     public static void main(String[] args){
@@ -60,6 +59,4 @@ public class 最长公共前缀 {
         }
         return ans;
     }
-
-
 }
