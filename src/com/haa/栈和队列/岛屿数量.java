@@ -20,9 +20,7 @@ public class 岛屿数量 {
     /*
     方法1.DFS,把给定的二维网格看做一个无向图,为了求出岛屿的数量，我们可以扫描整个二维网格。如果一个位置为 1，则以其为起始节点开始进行深度优先搜索。
         在深度优先搜索的过程中，每个搜索到的 1 都会被重新标记为 0。最后深度优先搜索的次数就是答案
-
      */
-
     public int numIslands(char[][] grid) {
         if(grid == null || grid.length==0){
             return 0;
@@ -40,7 +38,6 @@ public class 岛屿数量 {
         }
         return lands_num;
     }
-
     private void dfs(char[][] grid, int i, int j,int n, int m) {
 
         if(i<0 || i>=n || j<0 || j>=m || grid[i][j]=='0'){      //终止条件
