@@ -17,12 +17,10 @@ public class 最小栈 {
     class MinStack {
         private Stack<Integer> dataStack;
         private Stack<Integer> minStack;        //辅助栈，记录最小值
-        /** initialize your data structure here. */
         public MinStack() {
             dataStack = new Stack<>();
             minStack  = new Stack<>();
         }
-
         public void push(int x) {
             dataStack.push(x);
             if(minStack.isEmpty() || x <= minStack.peek())      //入栈时先和辅助栈栈顶元素比较，如果小于就如辅助栈，
@@ -31,22 +29,19 @@ public class 最小栈 {
         public void pop() {
             /*
             注意这里要用equals比较，不能用==
-
             “所有整形包装类对象之间值的比较，全部使用equals方法比较。说明：对于Integer var= ？在-128到127范围内的赋值，
-            Integer对象在IntegerCache.cache产生，会复用已有对象，这个区间的Integer值可以直接使用==进行判断，但是这个区间之外的所有数据都会在堆上产生，
-            并不会复用已有对象，这是一个大坑，推荐使用equals方法进行判断。”
-            原文链接：https://blog.csdn.net/weixin_44400193/article/details/109673263
              */
             if( dataStack.pop() .equals(  minStack.peek() )){
                 minStack.pop();             //判断当前出栈的是否为最小值
             }
-        }
 
+        }
         public int top() {
             return dataStack.peek();
         }
         public int getMin() {
             return minStack.peek();
         }
+
     }
 }
