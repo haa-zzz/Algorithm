@@ -20,28 +20,21 @@ public class 有效的括号 {
         方法:用栈解题，如果是左括号直接入栈，如果遇到右括号，与栈顶元素比较看是否匹配
      */
     public boolean isValid(String s) {
-
         int n = s.length();
-        if (n % 2 == 1) {
-            return false;
-        }
-
+        if (n % 2 == 1) return false;
         Map<Character, Character> map = new HashMap<>();
         map.put(')', '(');
         map.put('}', '{');
         map.put(']', '[');
-
         Deque<Character> deque = new ArrayDeque<>();
-
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-
-            if (map.containsKey(ch)) {              //如果是右括号
-                if (deque.isEmpty() || deque.poll() != map.get(ch)) {
+        for(Character ch : s.toCharArray()){
+            if(map.containsKey(ch)){             //如果是右括号
+                if( deque.isEmpty() ||  ( deque.poll() != map.get(ch) )  ){
                     return false;
                 }
-            } else                          //如果是左括号
-                deque.push(ch);
+            }else{
+                deque.push(ch);           //如果是左括号
+            }
         }
         return deque.isEmpty();
     }
