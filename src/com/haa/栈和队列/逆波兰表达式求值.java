@@ -17,6 +17,7 @@ public class 逆波兰表达式求值 {
      */
     public int evalRPN(String[] tokens) {
         Deque<Integer> deque = new ArrayDeque<>();
+
         for (int i = 0; i < tokens.length; i++) {
             switch (tokens[i]) {
                 case "+":
@@ -40,6 +41,4 @@ public class 逆波兰表达式求值 {
         }
         return deque.pop();
     }
-
-
 }
