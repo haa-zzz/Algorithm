@@ -2,14 +2,14 @@ package com.haa.栈和队列;
 
 public class 目标和 {
     /*
-    给定一个非负整数数组，a1, a2, ..., an, 和一个目标数，S。现在你有两个符号 + 和 -。
-    对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。
+    给定一个非负整数数组，a1, a2, ..., an, 和一个目标数，S。现在你有两个符号 + 和 - 。
+    对于数组中的任意一个整数，你都可以从 + 或 - 中选择一个符号添加在前面。
     返回可以使最终数组和为目标数 S 的所有添加符号的方法数。
      */
     /*
     方法一.递归的遍历全部的组合，如果最后的目标和和S相同，方法数+1
-    时间复杂度O(2^N)
-    空间复杂度O(N)
+        时间复杂度O(2^N)
+        空间复杂度O(N)
      */
     private int count = 0;
     public int findTargetSumWays(int[] nums, int S) {
@@ -19,7 +19,7 @@ public class 目标和 {
 
     private void fun(int[] nums, int i, int sum, int s) {
         if(i == nums.length){
-            if(sum==s){
+            if( sum == s ){
                 count++;
             }
         }else {
