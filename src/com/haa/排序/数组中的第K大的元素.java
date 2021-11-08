@@ -30,18 +30,13 @@ public class 数组中的第K大的元素 {
                 while( low < high && nums[high] >= pivotKey ){
                     high--;
                 }
-                swap(nums,low,high);
+                nums[low] = nums[high];
                 while(low < high && nums[low] <= pivotKey ){
                     low++;
                 }
-                swap(nums,low,high);
+                nums[high] = nums[low];
             }
+            nums[low] = pivotKey;
             return low;
         }
-        void swap(int[] nums,int a,int b){
-            int k = nums[a];
-            nums[a] = nums[b];
-            nums[b] = k;
-        }
-
 }
