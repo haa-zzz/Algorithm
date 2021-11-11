@@ -26,7 +26,7 @@ public class 复原IP {
         return !s.isEmpty() && s.length()<4 && (s.length() <= 1 || s.charAt(0) != '0' && Integer.parseInt(s) < 255);
     }
     private void dfs(StringBuilder sb, int startIndex, int nodeCount) {
-        //现在整数的个数已经有三个了，如果说最后一个也满足的话，那么就说明是一个正确格式的IP,直接把它添加到集合中去
+        //现在整数的个数已经有三个了，如果说最后一个也满足的话，那么就说明是一个正确格式的IP,直接把它添加到集合中去，否则直接return回溯寻找下一个
         if(nodeCount == 3){
             if(isValid(sb.substring(startIndex)))
                 res.add(sb.toString());
