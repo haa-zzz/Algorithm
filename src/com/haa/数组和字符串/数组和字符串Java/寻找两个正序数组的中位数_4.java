@@ -23,14 +23,14 @@ public class 寻找两个正序数组的中位数_4 {
 
         for (int i = 0; i <= len / 2; i++) {
             pre = cur;
-            if (aStart < m && ( bStart >= n || nums1[aStart] < nums2[bStart])) {
+            if (aStart < m && ( bStart >= n || nums1[aStart] < nums2[bStart]) ) {
                 cur = nums1[aStart++];
             } else {
                 cur = nums2[bStart++];
             }
         }
 
-        if ((len & 1) == 0)        //如果是偶数
+        if ( (len & 1) == 0 )        //如果是偶数
             return (pre + cur) / 2.0;
         else
             return cur;
