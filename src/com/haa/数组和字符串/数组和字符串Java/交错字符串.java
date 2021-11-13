@@ -1,6 +1,8 @@
 package com.haa.数组和字符串.数组和字符串Java;
 
 
+import java.util.Arrays;
+
 public class 交错字符串 {
     /*
     给定三个字符串 s1, s2, s3, 验证 s3 是否是由 s1 和 s2 交错组成的。
@@ -33,7 +35,6 @@ public class 交错字符串 {
             }
         }
         return dp[n][m];
-
     }
 
 }
