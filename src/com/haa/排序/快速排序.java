@@ -55,7 +55,6 @@ public class 快速排序 {
             swap(array, low, mid);
         //优化2. 优化不必要的交换
         int pivotKey = array[low];     //首先选最左边的元素记为中轴元素
-        int backus = pivotKey;           //将枢轴关键字备份到backus
         while (low < high) {
             while (low < high && array[high] >= pivotKey)
                 high--;
@@ -64,7 +63,8 @@ public class 快速排序 {
                 low++;
             array[high] = array[low];       //采用替换而不是交换的方式进行操作
         }
-        array[low] = backus;              //将枢轴数值替换回array[low]
+        array[low] = pivotKey;              //将枢轴数值替换回array[low]
         return low;                         //返回枢轴所在位置
     }
+
 }
