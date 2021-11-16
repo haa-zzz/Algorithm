@@ -12,7 +12,7 @@ public class 树的子结构26 {
         的子树是否包含树B.
      */
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-        return (A != null && B != null) && (recur(A,B)) || isSubStructure(A.left,B) || isSubStructure(A.right,B);
+        return (A != null && B != null) && ( (recur(A,B)) || isSubStructure(A.left,B) || isSubStructure(A.right,B) );
     }
     //判断以A节点开始的是否和B树有一样的结构
     boolean recur(TreeNode A, TreeNode B) {
@@ -21,3 +21,5 @@ public class 树的子结构26 {
         return recur(A.left, B.left) && recur(A.right, B.right);
     }
 }
+
+
