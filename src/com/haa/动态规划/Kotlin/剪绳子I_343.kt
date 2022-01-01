@@ -31,7 +31,6 @@ class Solution {
             for(j in 2 until  i){
                 dp[i] = max(dp[i], max(j*(i-j),j*dp[i-j]))
             }
-
         }
         return dp[n]
     }
