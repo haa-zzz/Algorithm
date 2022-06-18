@@ -30,7 +30,7 @@ public class 寻找两个正序数组的中位数_4 {
             }
         }
 
-        if ( (len & 1) == 0 )        //如果是偶数
+        if( (len & 1) == 0 )        //如果是偶数
             return (pre + cur) / 2.0;
         else
             return cur;
