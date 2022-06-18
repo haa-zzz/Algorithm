@@ -6,10 +6,7 @@ public class KMP算法 {
         String S = "mississippi";
         String T = "issip";
         System.out.println(Index_KMP(S,0,T));
-
-
     }
-
     private static int[] Get_Next(String T){
 
         int[] next = new int[T.length()];
@@ -72,8 +69,6 @@ public class KMP算法 {
         else {
             return -1;
         }
-
-
     }
 
 }

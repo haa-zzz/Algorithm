@@ -6,7 +6,7 @@ import java.util.List;
 
 public class 三数之和 {
     /*
-    给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+    给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
     注意：答案中不可以包含重复的三元组。
      */
     /*
@@ -23,7 +23,6 @@ public class 三数之和 {
         空间复杂度O( logN )
      */
     public List<List<Integer>> threeSum(int[] nums) {
-
         List<List<Integer>> ans = new ArrayList();
         int n = nums.length;
         if(n < 3){
@@ -56,27 +55,4 @@ public class 三数之和 {
         }
         return ans;
     }
-    /*
-    自己的思路是回溯，但无法去重
-     */
-    public List<List<Integer>> threeSum1(int[] nums) {
-
-        //回溯
-        List<List<Integer>> lists = new ArrayList<>();
-        backtrack(0, nums, lists, new ArrayList<Integer>() );
-        return lists;
-    }
-    private void backtrack( int index, int[] nums, List<List<Integer>> ans, List<Integer> path){
-        if(path.size() == 3){
-            if( path.get(0)+path.get(1)+path.get(2) == 0 ){
-                ans.add(new ArrayList(path));
-            }
-        }
-        for(int i = index; i < nums.length; i++){
-            path.add(nums[i]);
-            backtrack(i+1, nums, ans, path);
-            path.remove(path.size()-1);
-        }
-    }
-
 }
