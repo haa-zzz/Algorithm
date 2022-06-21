@@ -38,11 +38,17 @@ public class 三数之和 {
             }
             int left = i+1, right = n-1;
             while(left < right){
+                if(left > i+1 && nums[left] == nums[left-1]) {
+                    left++;
+                    continue;
+                }
+                if(right < n-1 && nums[right] == nums[right+1]) {
+                    right--;
+                    continue;
+                }
                 int sum = nums[i] + nums[left] + nums[right];
                 if(sum == 0){
                     ans.add(Arrays.asList(nums[i],nums[left],nums[right]));
-                    while(left < right && nums[left] == nums[left+1]) left++;       //去重
-                    while(left < right && nums[right] == nums[right-1]) right--;    //去重
                     left++;
                     right--;
                 }
