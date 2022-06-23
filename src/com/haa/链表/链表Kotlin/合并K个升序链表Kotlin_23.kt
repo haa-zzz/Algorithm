@@ -52,7 +52,7 @@ class 合并K个升序链表Kotlin_23 {
         fun mergeKLists(lists: Array<ListNode?>): ListNode? {
             return mergeSort(lists, 0, lists.size - 1)
         }
-        fun mergeSort(lists: Array<ListNode?>, left: Int, right: Int) : ListNode?{
+        private fun mergeSort(lists: Array<ListNode?>, left: Int, right: Int) : ListNode?{
             if(left == right){
                 return lists[left]
             }
