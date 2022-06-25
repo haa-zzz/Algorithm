@@ -8,6 +8,17 @@ import java.lang.StringBuilder
 
     力抠：17
  */
+/**
+    分析：回溯
+       1.首先要用Map存储每一种电话号码和对于的字母，之后采用回溯的方法解题。
+       2.用index作为状态变量，表示当前要选的是第index个字母。用path保存每一趟的结果，对于当前的状态，首先拿到map
+       中对应的字母集，遍历字母集，拿到一个字母加入到path中。然后递归的去考虑下一个状态。
+       3.当index == digits.length()时，表示对于digits的每个对应数字，我们都拿到了一个对应的字母，此时结束，把结果加入结果集ans
+       4.回溯部分，一趟递归结果时，我们要回退一部，需要删除path保存的最后一个字母
+
+       时间复杂度O(3 ^ m * 4 ^ n) ： m表示长度为三的个数，n表示长度为4的个数。相对与(m+n层循环)
+       空间复杂度O( m+n ) ： 主要在于hash表和回溯的递归深度，最深为O(M+n)
+     */
 fun letterCombinations(digits: String): List<String> {
     if (digits.isEmpty()) {
         return emptyList()
@@ -26,14 +37,14 @@ fun letterCombinations(digits: String): List<String> {
     return ans
 }
 
-fun search(digits: String, index: Int, str: StringBuilder, map: HashMap<Char, String>, ans: MutableList<String>) {
-    if(index == digits.length-1) {
-        ans.add(str.toString())
+fun search(digits: String, index: Int, path: StringBuilder, map: HashMap<Char, String>, ans: MutableList<String>) {
+    if(index == digits.length) {
+        ans.add(path.toString())
     } else {
         map[digits[index]]?.forEach { c ->
-            str.append(c)
-            search(digits, index+1, str, map, ans)
-            str.deleteCharAt(index)
+            path.append(c)
+            search(digits, index+1, path, map, ans)
+            path.deleteCharAt(index)
         }
     }
 }
