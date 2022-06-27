@@ -8,6 +8,6 @@ import kotlin.jvm.JvmStatic
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
-        isValid("()[]{}")
+        combinationSum(intArrayOf(2,3,6,7), 7)
     }
 }
