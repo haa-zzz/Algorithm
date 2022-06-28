@@ -2,7 +2,7 @@ package com.haa.algorithm.困难;
 
 public class 接雨水 {
     /*
-    给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+    给定n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
     示例 1：
     输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
     输出：6
@@ -50,8 +50,8 @@ public class 接雨水 {
         在上面的做法中，因为要分别从前向后和从后向前遍历来计算dp数组，所以无法在此基础上实现空间优化。
         为此可以换一种思路，使用双指针，left 和 right 并维护 leftMax 和 rightMax
         注意leftMax记录的是[0,left]中的最大值，rightMax记录的是[left,n-1]中的最大值
-        如果 height[left] < height[right] 说明 leftMax < rightMax ，此时leftMax就是left位置对应的最大高度
-        否则：height[left] >= height[right] 说明 leftMax >= rightMax,此时rightMax就是right位置对应的最大高度
+        如果height[left-1] < height[right+1]说明 leftMax < rightMax, 此时leftMax就是left位置对应的最大高度，height[left]就可以计算了
+        否则：height[left] >= height[right] 说明 leftMax >= rightMax,此时rightMax就是right位置对应的最大高度，height[right]就可以计算了
      */
     public int trap1(int[] height) {
         int n = height.length;
