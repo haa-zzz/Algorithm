@@ -8,6 +8,6 @@ import kotlin.jvm.JvmStatic
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
-        combinationSum(intArrayOf(2,3,6,7), 7)
+        groupAnagrams(arrayOf("eat", "tea", "tan", "ate", "nat", "bat"))
     }
 }
