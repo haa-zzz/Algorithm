@@ -13,11 +13,11 @@ package autumnMovesMustWin
             细节注意：因为每一步的计算需要用到左边和上面的数据。所以要注意填表顺序
          第 3 步: 考虑初始化
             dp[1][1]显然为1
-         第四步: 考虑输出
-            dp[n][m]
 
          时间复杂度O(N*M)
          空间复杂度O(N*M)
+
+         力抠62：
      */
 
 fun uniquePaths(m: Int, n: Int): Int {
@@ -57,5 +57,4 @@ fun uniquePaths1(m: Int, n: Int): Int {
 
         }    }
     return dp[n]
-
 }
