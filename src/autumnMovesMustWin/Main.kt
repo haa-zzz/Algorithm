@@ -8,6 +8,7 @@ import kotlin.jvm.JvmStatic
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
-        groupAnagrams(arrayOf("eat", "tea", "tan", "ate", "nat", "bat"))
+       // groupAnagrams(arrayOf("eat", "tea", "tan", "ate", "nat", "bat"))
+        canJump(intArrayOf(2,3,1,1,4))
     }
 }
