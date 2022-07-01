@@ -11,4 +11,14 @@ object Main {
        // groupAnagrams(arrayOf("eat", "tea", "tan", "ate", "nat", "bat"))
         canJump(intArrayOf(2,3,1,1,4))
     }
+    fun lengthOfLongestSubstring(s: String): Int {
+        var ans = 0
+        var left = 0
+        val hashMap = HashMap<Char,Int>()
+        if(hashMap.c)
+        for(i in s.indices) {
+
+        }
+
+    }
 }
