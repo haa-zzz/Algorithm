@@ -15,10 +15,11 @@ object Main {
         var ans = 0
         var left = 0
         val hashMap = HashMap<Char,Int>()
-        if(hashMap.c)
+
         for(i in s.indices) {
 
         }
+        return 0
 
     }
 }
