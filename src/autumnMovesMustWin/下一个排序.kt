@@ -22,11 +22,11 @@ fun nextPermutation(nums: IntArray) {
         if (nums[i] < nums[i + 1]) {
             while (nums[i] >= nums[n]) n--
             swap(nums, i, n)
-            reverse(nums, i + 1) //反转
+            reverse(nums, i + 1)    //反转
             return
         }
     }
-    reverse(nums, 0)
+    reverse(nums, 0)        //走到这里说明数组是降序有序，把它反转
 }
 
 private fun reverse(nums: IntArray, start: Int) {

@@ -12,9 +12,7 @@ package autumnMovesMustWin
 
 /**
  * 方法：动态规划
- *
  * dp[i][j]表示s的前i个是否可以被p的前j个匹配
- *
  *动态方程推导：
  *  对于dp[i][j]
  *  1. (s[i] == p[j]) or (p[j] == .) -> dp[i][j] = dp[i-1][j-1]
@@ -27,7 +25,6 @@ package autumnMovesMustWin
  *  都是空串为true: dp[0][0] = true
  *  dp[0][j]: 既 “###” 匹配 “”,只要a*b*这种可以匹配，其他全是false
  *  dp[i][0]: false
- *
  */
 
 fun isMatch(s: String, p: String): Boolean {

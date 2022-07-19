@@ -52,7 +52,7 @@ fun searchRangeByMethodTwo(nums: IntArray, target: Int): IntArray {
     var left = 0
     var right = n - 1
     while (left < right) {                //第一次二分查找查找左值
-        val mid = left + (right - left shr 1)
+        val mid = left + ( (right - left) shr 1)
         if (nums[mid] >= target) {
             right = mid
         } else {

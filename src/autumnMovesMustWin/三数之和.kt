@@ -20,18 +20,12 @@ package autumnMovesMustWin
 
 fun threeSum(nums: IntArray): List<List<Int>> {
     val n = nums.size
-    if(n < 3) {
-        return emptyList()
-    }
+    if(n < 3) { return emptyList() }
     val ans = mutableListOf<List<Int>>()
     nums.sort()
     for(i in 0..n-3) {
-        if(nums[i] > 0) {
-            break
-        }
-        if(i > 0 && nums[i] == nums[i-1]) {
-            continue
-        }
+        if(nums[i] > 0) { break }
+        if(i > 0 && nums[i] == nums[i-1]) { continue }
         var left = i+1
         var right = n-1
         while(left < right) {
