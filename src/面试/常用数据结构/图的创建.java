@@ -8,26 +8,27 @@ public class 图的创建 {
  * 邻接矩阵无向图
  */
 class MatrixNDG {
-    int size;//图顶点个数
-    char[] vertexs;//图顶点名称
-    int[][] matrix;//图关系矩阵
-    public MatrixNDG(char[] vertexs,char[][] edges){
-        size=vertexs.length;
-        matrix=new int[size][size];//设定图关系矩阵大小
-        this.vertexs=vertexs;
+    int size;  //图顶点个数
+    char[] vertexs;  //图顶点名称
+    int[][] matrix;  //图关系矩阵
 
-        for(char[] c:edges){//设置矩阵值
-            int p1 = getPosition(c[0]);//根据顶点名称确定对应矩阵下标
+    public MatrixNDG(char[] vertexs, char[][] edges) {
+        size = vertexs.length;
+        matrix = new int[size][size];     //设定图关系矩阵大小
+        this.vertexs = vertexs;
+
+        for(char[] c : edges) {     //设置矩阵值
+            int p1 = getPosition(c[0]);     //根据顶点名称确定对应矩阵下标
             int p2 = getPosition(c[1]);
 
-            matrix[p1][p2] = 1;//无向图，在两个对称位置存储
+            matrix[p1][p2] = 1;     //无向图，在两个对称位置存储
             matrix[p2][p1] = 1;
         }
     }
     //图的遍历输出
     public void print(){
-        for(int[] i:matrix){
-            for(int j:i){
+        for(int[] i : matrix){
+            for(int j : i){
                 System.out.print(j+" ");
             }
             System.out.println();
@@ -35,8 +36,8 @@ class MatrixNDG {
     }
     //根据顶点名称获取对应的矩阵下标
     private int getPosition(char ch) {
-        for(int i=0; i<vertexs.length; i++)
-            if(vertexs[i]==ch)
+        for(int i = 0; i < vertexs.length; i++)
+            if(vertexs[i] == ch)
                 return i;
         return -1;
     }
@@ -49,26 +50,27 @@ class MatrixDG {
     int size;
     char[] vertexs;
     int[][] matrix;
-    public MatrixDG(char[] vertexs,char[][] edges){
-        size=vertexs.length;
-        matrix=new int[size][size];
-        this.vertexs=vertexs;
+
+    public MatrixDG(char[] vertexs, char[][] edges){
+        size = vertexs.length;
+        matrix = new int[size][size];
+        this.vertexs = vertexs;
         //和邻接矩阵无向图差别仅仅在这里
-        for(char[] c:edges){
+        for(char[] c : edges){
             int p1 = getPosition(c[0]);
             int p2 = getPosition(c[1]);
             matrix[p1][p2] = 1;
         }
     }
     public void print(){
-        for(int[] i:matrix){
-            for(int j:i)    System.out.print(j+" ");
+        for(int[] i : matrix){
+            for(int j : i)    System.out.print(j+" ");
             System.out.println();
         }
     }
     private int getPosition(char ch) {
-        for(int i=0; i<vertexs.length; i++)
-            if(vertexs[i]==ch)
+        for(int i = 0; i < vertexs.length; i++)
+            if(vertexs[i] == ch)
                 return i;
         return -1;
     }
@@ -86,9 +88,9 @@ class MatrixDG {
  * 邻接表无向图
  */
 class ListNDG {
-    Vertex[] vertexLists;//邻接表数组
+    Vertex[] vertexLists;   //邻接表数组
     int size;
-    class Vertex{//邻接表节点类，单链表数据结构
+    class Vertex{   //邻接表节点类，单链表数据结构
         char ch;
         Vertex next;
         Vertex(char ch){//初始化方法
