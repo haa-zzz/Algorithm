@@ -35,12 +35,10 @@ public class 买卖股票的最佳时机II_122 {
      */
 
     public int maxProfit(int[] prices) {
-
         int n = prices.length;
         if(n < 2){
             return 0;
         }
-
         int[][] dp = new int[n][2];
         //初始条件
         dp[0][0] = 0;
