@@ -35,6 +35,7 @@ public class 全排列_46 {
         if(n==0){
             return null;
         }
+        System.out.println();
         List<List<Integer>>  lists = new ArrayList<>();
         boolean[] isPush = new boolean[n];
         mute( lists, 0, n, nums,isPush,new ArrayList<Integer>());

@@ -23,8 +23,8 @@ public class 旋转数组的最小数字 {
             左排序数组 4 5 6 7
             右排序数组         1 2 3
             mid = i+(j-i)/2
-            [mid] > [j]   组说明m在左排序数 旋转点一定在[m+1,j]内 即 i = m+1;
-            [mid] < [j]   说明m在右排序数组 旋转点一定在[i,m]内 即 j = m;
+            [mid] > [j]   则说明mid在左排序数 旋转点一定在[m+1,j]内 即 i = m+1;
+            [mid] < [j]   说明mid在右排序数组 旋转点一定在[i,m]内 即 j = m;
             [mid] = [j]    无法判断 因此执行j--缩小范围
      */
     public int minArray(int[] numbers) {

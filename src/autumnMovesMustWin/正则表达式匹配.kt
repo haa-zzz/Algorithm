@@ -55,6 +55,29 @@ fun isMatch(s: String, p: String): Boolean {
     return dp[lenS][lenP]
 }
 
+public List<String> binaryTreePaths(TreeNode root) {
+    List<Integer> paths = new ArrayList<String>();
+    int num = 0;
+    constructPaths(root, num, paths);
+    //累加过程省略
+    println()
+    return paths;
+}
+
+public void constructPaths(TreeNode root, int num, List<Integer> paths) {
+    if (root != null) {
+        int num += 0;
+        num += (Integer.toString(root.val));
+        if (root.left == null && root.right == null) {  // 当前节点是叶子节点
+            paths.add(num);  // 把路径加入到答案中
+        } else {
+            // 当前节点不是叶子节点，继续递归遍历
+            constructPaths(root.left, num, paths);
+            constructPaths(root.right, num, paths);
+        }
+    }
+}
+
 /**
  * java
  */
