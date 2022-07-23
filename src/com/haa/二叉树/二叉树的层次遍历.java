@@ -2,10 +2,7 @@ package com.haa.二叉树;
 
 import bean.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class 二叉树的层次遍历 {
     /*
@@ -41,7 +38,5 @@ public class 二叉树的层次遍历 {
 
         }
         return lists;
-
-
     }
 }
