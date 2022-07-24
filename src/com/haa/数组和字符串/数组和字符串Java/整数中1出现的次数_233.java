@@ -24,16 +24,19 @@ public class 整数中1出现的次数_233 {
      */
     class Solution {
         public int countDigitOne(int n) {
-            int weight = 1, res = 0;    //初始时：in为
-            int high = n / 10;
-            int cur = n % 10;
-            int low = 0;
-            while(high != 0 || cur != 0) {
-                if(cur == 0) res += high * weight;
-                else if(cur == 1) res += high * weight + low + 1;
-                else res += (high + 1) * weight;
-                low += cur * weight;
-                cur = high % 10;
+            int weight = 1, res = 0;    //初始时：当前位为 个位
+            int high = n / 10;      //高位
+            int in = n % 10;
+            int low = 0;    //低位
+            while(high != 0 || in != 0) {
+                if(in == 0)
+                    res += high * weight;
+                else if(in == 1)
+                    res += high * weight + low + 1;
+                else
+                    res += (high + 1) * weight;
+                low += in * weight;     //更新
+                in = high % 10;
                 high /= 10;
                 weight *= 10;
             }
