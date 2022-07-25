@@ -12,47 +12,33 @@ public class 包含min函数的栈 {
     /*
     注：此题如果用==将会无法通过 Integer的equals重写过，比较的是内部value的值， ==如果在[-128,127]会被cache缓存,超过这个范围则比较的是对象是否相同
      */
-
     static class MinStack {
-
         Deque<Integer> deque;
         Deque<Integer> getmin;
-        /** initialize your data structure here. */
         public MinStack() {
             deque = new ArrayDeque<>();
             getmin = new ArrayDeque<>();
         }
-
         public void push(int x) {
-
             deque.push(x);
-
             if( getmin.isEmpty() || x <= getmin.peek()){
-
                 getmin.push(x);
             }
-
         }
-
         public void pop() {
-
             if(!deque.isEmpty()){
 
                 if( deque.peek().equals( getmin.peek() ) )
                     getmin.pop();
                 deque.pop();
             }
-
         }
 
         public int top() {
-
             return deque.peek();
-
         }
 
         public int min() {
-
             System.out.println(getmin);
             return getmin.peek();
 

@@ -23,7 +23,6 @@ public class 合并二叉树 {
          空间复杂度O(N)
      */
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-
         if(root1==null){
             return root2;
         }
