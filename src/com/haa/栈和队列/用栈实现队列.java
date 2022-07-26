@@ -19,24 +19,24 @@ public class 用栈实现队列 {
             在将deque2中的出栈储存到的deque1中，
      */
     class MyQueue {
-        Deque<Integer> deque1 ;
-        Deque<Integer> deque2 ;
+        Deque<Integer> dataDeque;
+        Deque<Integer> helpDeque;
         public MyQueue() {
-            deque1 = new ArrayDeque<>();
-            deque2 = new ArrayDeque<>();
+            dataDeque = new ArrayDeque<>();
+            helpDeque = new ArrayDeque<>();
         }
         public void push(int x) {
-            while(!deque1.isEmpty()){
-                deque2.push(deque1.pop());      //辅助栈
+            while(!dataDeque.isEmpty()){
+                helpDeque.push(dataDeque.pop());      //辅助栈
             }
-            deque2.push(x);
-            while(!deque2.isEmpty()){
-                deque1.push(deque2.pop());
+            helpDeque.push(x);
+            while(!helpDeque.isEmpty()){
+                dataDeque.push(helpDeque.pop());
             }
         }
-        public int pop() { return deque1.pop(); }
-        public int peek() { return deque1.peek(); }
-        public boolean empty() { return deque1.isEmpty(); }
+        public int pop() { return dataDeque.pop(); }
+        public int peek() { return dataDeque.peek(); }
+        public boolean empty() { return dataDeque.isEmpty(); }
     }
 
     /*

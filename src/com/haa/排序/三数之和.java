@@ -25,27 +25,17 @@ public class 三数之和 {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList();
         int n = nums.length;
-        if(n < 3){
-            return ans;
-        }
+        if(n < 3){ return ans; }
         Arrays.sort(nums);
         for(int i = 0; i < n; i++){
             if(nums[i] > 0){
                 break;
             }
-            if(i > 0 && nums[i] == nums[i-1]){
-                continue;           //去重
-            }
+            if(i > 0 && nums[i] == nums[i-1]){ continue; } //去重
             int left = i+1, right = n-1;
             while(left < right){
-                if(left > i+1 && nums[left] == nums[left-1]) {
-                    left++;
-                    continue;
-                }
-                if(right < n-1 && nums[right] == nums[right+1]) {
-                    right--;
-                    continue;
-                }
+                if(left > i+1 && nums[left] == nums[left-1]) { left++;continue; }   //去重
+                if(right < n-1 && nums[right] == nums[right+1]) { right--;continue; }
                 int sum = nums[i] + nums[left] + nums[right];
                 if(sum == 0){
                     ans.add(Arrays.asList(nums[i],nums[left],nums[right]));

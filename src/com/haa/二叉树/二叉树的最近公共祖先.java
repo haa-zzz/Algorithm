@@ -26,7 +26,6 @@ public class 二叉树的最近公共祖先 {
     解题时通过后序遍历的方法，在遇到节点p或者q时返回
     终止条件:
         当遇到节点p或者q时返回root,当越过叶子节点没有找到节点p或者q时返回null
-
       这就是一个后序遍历的模型，只不过是每个父节点都会接收子节点的状态（是否含有p、q）并把这个状态往上传递，直到该结点满足祖先节点的条件。
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
