@@ -30,14 +30,11 @@ public class 从先序与中序遍历序列构造二叉树 {
     private TreeNode buildTreeHelper(int[] preorder, int p_start, int p_end,  int i_start,
                                      HashMap<Integer, Integer> map){
         // preorder 为空，直接返回 null
-        if(p_start == p_end){
-            return null;
-        }
+        if(p_start == p_end){ return null; }
         int root_val = preorder[p_start];
         TreeNode root = new TreeNode(root_val);
         //在中序遍历中找到根节点的位置
         int i_root_index = map.get(root_val);
-
         int leftNum = i_root_index - i_start;
         //递归的构造左子树
         root.left = buildTreeHelper(preorder, p_start + 1, p_start + leftNum + 1,

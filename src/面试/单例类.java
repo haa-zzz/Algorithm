@@ -22,13 +22,13 @@ class Singleton1 {
  * 只是在使用的时候才会去创建对象
  * 但是每次访问都需要进行同步，效率不高
  */
-class SingleTon2 {
-    private static SingleTon2 singleTon2;
-    private SingleTon2(){}
+class SingleTon2_ {
+    private static SingleTon2_ singleTon2;
+    private SingleTon2_(){}
 
-    public static synchronized SingleTon2 getInstance() {
+    public static synchronized SingleTon2_ getInstance() {
         if(singleTon2 == null) {
-            singleTon2 = new SingleTon2();
+            singleTon2 = new SingleTon2_();
         }
         return singleTon2;
     }

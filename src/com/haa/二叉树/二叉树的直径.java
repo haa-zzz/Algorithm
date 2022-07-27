@@ -8,7 +8,6 @@ public class 二叉树的直径 {
      */
     /*
     方法.递归(深度优先搜索)
-
         对于一个节点，如果该节点的左子树向下遍历经过最多的节点数为L,右子树向下遍历经过最多的节点数为R，那么以该节点为起点的路径经过节点数的
         最大值为L+R+1
         记节点node为起点的路径经过节点数的最大值为dNode,那么二叉树的直径就是所有节点dNode的最大值减一。
@@ -17,11 +16,9 @@ public class 二叉树的直径 {
             先递归调用左儿子和右儿子求得它们为根的子树的深度 L 和 R,则该节点为根的子树的深度即为max(L,R)+1，
             该节点的dNode值为L+R+1,
             递归搜索每个节点并设一个全局变量 ans 记录 dNode的最大值，最后返回 ans-1 即为树的直径。
-
      */
     private int ans;
     public int diameterOfBinaryTree(TreeNode root) {
-
         ans = 1;
         depth(root);
         return ans-1;
@@ -35,6 +32,4 @@ public class 二叉树的直径 {
         ans = Math.max(ans,L+R+1);  //更新ans值
         return Math.max(L,R)+1;     //返回该节点为根的子树的深度
     }
-
-
 }

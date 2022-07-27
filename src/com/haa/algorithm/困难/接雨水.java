@@ -18,7 +18,6 @@ public class 接雨水 {
             初始化：dpLeft[0] = height[0], dpRight[0] = height[n-1];
             转移方程：dpLeft[i] = Max(dpLeft[i-1],height[i])
                     dpRight[i] = Max(dpRight[i+1],height[i])
-
          时间复杂度O(N)
          空间复杂度O(N)
      */
@@ -30,7 +29,6 @@ public class 接雨水 {
         }
         int[] dpLeft = new int[n];
         int[] dpRight = new int[n];
-
         dpLeft[0] = height[0];
         dpRight[n-1] = height[n-1];
         for(int i = 1; i < n; i++){

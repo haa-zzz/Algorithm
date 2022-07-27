@@ -56,12 +56,9 @@ public class 在排序数组中查找元素的第一个和最后一个位置 {
             }else{
                 left = mid+1;
             }
-        }
-        //此时left == right,如果存在target,都指向数组中第一个出现target的索引
-
+        }   //此时left == right,如果存在target,都指向数组中第一个出现target的索引
         if(nums[left] != target){           //特判：如果target不存在于数组中
-            return ans;
-        }
+            return ans; }
         ans[0] = left;
         left = 0;right = n-1;
         while(left < right){                //第二次二分查找查找右值
@@ -74,7 +71,5 @@ public class 在排序数组中查找元素的第一个和最后一个位置 {
         }
         ans[1] = left;
         return ans;
-
     }
-
 }
