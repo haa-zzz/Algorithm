@@ -24,7 +24,7 @@ public class 有效的括号 {
         map.put('}', '{');
         map.put(']', '[');
         Deque<Character> deque = new ArrayDeque<>();
-        for(Character ch : s.toCharArray()){
+        for(Character ch : s.toCharArray()) {
             if(map.containsKey(ch)){             //如果是右括号
                 if( deque.isEmpty() ||  ( deque.poll() != map.get(ch) )  ){
                     return false;

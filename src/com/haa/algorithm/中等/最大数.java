@@ -39,11 +39,9 @@ public class 最大数 {
     }
     /*
     方法2.直接在数组中排序
-
          我们可以比较输入数组的每个元素的最高位，最高位相同的时候比较次高位，以此类推，完成排序，然后把它们拼接起来。
          对于特殊的如（54，5,546）
               排序后应该是    5,54,546
-
      */
     public String largestNumber1(int[] nums) {
         int n = nums.length;

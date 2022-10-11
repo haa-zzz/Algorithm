@@ -11,7 +11,6 @@ public class 重构字符串 {
     public static void main(String[] args) {
         String s = "aab";
         System.out.println(reorganizeString(s));
-
     }
     /*
         方法一：

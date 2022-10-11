@@ -15,7 +15,9 @@ public class 平衡二叉树 {
             return deep != -1;
         }
         int deep(TreeNode root) {
-            if(root == null){ return 0; }
+            if(root == null) {
+                return 0;
+            }
             int left = deep(root.left);
             if(left == -1) {       //剪纸，当为-1时，说明已经不是平衡二叉树了，直接返回就好了
                 return -1;
